@@ -22,16 +22,19 @@ PyTorch 2.4.1 + cu118
 ## How to Run
 
 # Clone the repository
+```
 git clone https://github.com/MooseML/CIBMTR-HCT-Survival-Predictions.git
 cd CIBMTR-HCT-Survival-Predictions
-
+```
 # (Optional) Create a virtual environment
+```
 python -m venv .venv
 .\.venv\Scripts\activate      # or: source .venv/bin/activate
-
+```
 # Install requirements
+```
 pip install -r requirements.txt
-
+```
 ### 3. Generate submission
 
 Output file format:
