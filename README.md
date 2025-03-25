@@ -2,9 +2,9 @@
 
 This repo contains my full solution for the [CIBMTR Kaggle Competition](https://www.kaggle.com/competitions/equity-post-HCT-survival-predictions), which focuses on predicting equitable survival rates for allogeneic Hematopoietic Cell Transplantation (HCT) patients.
 
-📈 Final Private Leaderboard Score: **0.69261**  
-🏅 Rank: **773 / 3327**  
-📅 Competition Timeline: Dec 4, 2024 – Mar 5, 2025
+Final Private Leaderboard Score: **0.69261**  
+Rank: **773 / 3327**  
+Competition Timeline: Dec 4, 2024 – Mar 5, 2025
 
 ---
 
@@ -21,64 +21,64 @@ PyTorch 2.4.1 + cu118
 
 ## How to Run
 
-# Clone the repository
-```
-git clone https://github.com/MooseML/CIBMTR-HCT-Survival-Predictions.git
-cd CIBMTR-HCT-Survival-Predictions
-```
-# (Optional) Create a virtual environment
-```
-python -m venv .venv
-.\.venv\Scripts\activate      # or: source .venv/bin/activate
-```
-# Install requirements
-```
-pip install -r requirements.txt
-```
-### 3. Generate submission
-
-Output file format:
-
-```
-data/            # CSV files 
-notebooks/       # Jupyter notebooks (main pipeline in here)
-src/             # All Python source code (config, models, training, etc.)
-    ├── config.py
-    ├── train.py
-    ├── feature_engineering.py
-    ├── ensemble.py
-    └── ...
-requirements.txt
-README.md
-submission.csv   # final submission format
-```
-
----
-
-## How to Run
-
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/MooseML/CIBMTR-HCT-Survival-Predictions.git
 cd CIBMTR-HCT-Survival-Predictions
 ```
 
-### 2. Install requirements
+### 2. Set Up the Python Environment
 
-Use the conda instructions above to ensure PyTorch and GPU support.
+#### Option A: With Conda (Recommended for GPU / PyTorch Compatibility)
 
-### 3. Run the pipeline
+```bash
+conda create -n cibmtr_env python=3.8
+conda activate cibmtr_env
 
-The pipeline is executed through the notebook:
+conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install -r requirements.txt
+```
+
+> This setup matches my environment (Python 3.8.10, CUDA 11.8, RTX 3070 Ti, PyTorch 2.4.1).  
+> If you're using a different system or Python version, check [PyTorch installation options](https://pytorch.org/get-started/locally/) to match your drivers and hardware.
+
+#### Option B: With `venv` (for CPU-only or custom setups)
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate      # or: source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+You may need to manually install a compatible `torch` version depending on your hardware.
+
+### 3. Run the Pipeline
+
+Run the main notebook:
 
 ```python
 notebooks/cibmtr-equitable-post-hct-survival-predictions.ipynb
 ```
 
-You can run the full pipeline there, including feature engineering, model training, ensembling, and submission generation.
+This handles:
+- Feature engineering
+- Model training
+- Prediction
+- Ensembling
+- Submission generation
 
----
+
+### Project Structure
+
+```
+data/            # CSV input files (ignored by Git)
+notebooks/       # Jupyter notebooks (main pipeline in here)
+src/             # Python source code (config, models, training, etc.)
+requirements.txt # Project dependencies
+README.md
+submission.csv   # Final output format
+```
 
 ## Notes on Kaggle Execution
 
