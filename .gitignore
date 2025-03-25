@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 *.whl
 *.tar
+*.tar.gz
 
 # Logs
 *.log
