@@ -14,3 +14,5 @@ tensorflow==2.13.0
 tensorflow-addons
 tqdm
 joblib
+# torch not listed because pip can't install correct CUDA build on Python 3.8
+# See README for conda installation instructions
