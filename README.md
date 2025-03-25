@@ -73,18 +73,18 @@ def score(solution: pd.DataFrame, submission: pd.DataFrame, row_id_column_name: 
 ```
 Larger risk scores imply higher hazard and earlier events.
 
-## 🛠 How to Run
+## How to Run
 
-### 1. Install dependencies
+# Clone the repository
+git clone https://github.com/MooseML/CIBMTR-HCT-Survival-Predictions.git
+cd CIBMTR-HCT-Survival-Predictions
 
-```bash
+# (Optional) Create a virtual environment
+python -m venv .venv
+.\.venv\Scripts\activate      # or: source .venv/bin/activate
+
+# Install requirements
 pip install -r requirements.txt
-```
-
-### 2. Organize files
-
-- Put `train.csv`, `test.csv`, and `sample_submission.csv` into the `data/` folder.
-- Run `src/train.py` or your chosen pipeline.
 
 ### 3. Generate submission
 
