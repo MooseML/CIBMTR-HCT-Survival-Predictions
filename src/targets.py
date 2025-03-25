@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
 from lifelines import KaplanMeierFitter, NelsonAalenFitter
-from metric import score  
+from src.metric import score  
 
 class Targets:
     def __init__(self, data, n_splits=5):

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import optuna
-from metric import score
-from config import CFG
+from src.metric import score
+from src.config import CFG
 
 def model_merge(y_hat_reg_tree,  y_hat_reg_km, y_hat_reg_na, y_hat_reg_rank, y_hat_reg_cox, y_hat_cls, weights):
     """

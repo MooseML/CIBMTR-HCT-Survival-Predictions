@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from config import CFG
+from src.config import CFG
 
 class CoxResNet(nn.Module):
     def __init__(self, input_size, hidden_size=4096, dropout=0.05):

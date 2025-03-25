@@ -4,7 +4,7 @@ import pickle
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
 from torch.utils.data import DataLoader
 from pathlib import Path
-from config import CFG
+from src.config import CFG
 
 class FE:
     def __init__(self, batch_size=32768, transformer_directory="transformers/"):

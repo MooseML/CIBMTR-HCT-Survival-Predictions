@@ -5,12 +5,12 @@ from catboost import CatBoostClassifier, CatBoostRegressor
 from xgboost import XGBClassifier, XGBRegressor
 from lightgbm import LGBMClassifier, LGBMRegressor
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor
-from eda import EDA
-from targets import Targets
-from metric import score
-from config import CFG
-from models import CoxResNet, CoxPHLoss, train_cox_resnet_fullbatch
-from feature_engineering import FE
+from src.eda import EDA
+from src.targets import Targets
+from src.metric import score
+from src.config import CFG
+from src.models import CoxResNet, CoxPHLoss, train_cox_resnet_fullbatch
+from src.feature_engineering import FE
 from sklearn.metrics import roc_auc_score, log_loss
 
 

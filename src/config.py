@@ -1,18 +1,23 @@
+import os
+
 class CFG:
     # toggle btw Kaggle & local paths
     use_kaggle = False # True for Kaggle, False for local execution
 
     # paths:
+    base_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # go up from src/
+    data_directory = os.path.join(base_directory, 'data')
+
     if use_kaggle:
         train_path = '/kaggle/input/equity-post-HCT-survival-predictions/train.csv'
         test_path = '/kaggle/input/equity-post-HCT-survival-predictions/test.csv'
         subm_path = '/kaggle/input/equity-post-HCT-survival-predictions/sample_submission.csv'
         dict_path = '/kaggle/input/equity-post-HCT-survival-predictions/data_dictionary.csv'
     else:
-        train_path = 'C:/Users/mattg/Downloads/KAGGLE_PROJECTS/Kaggle_CIBMTR/train.csv'
-        test_path = 'C:/Users/mattg/Downloads/KAGGLE_PROJECTS/Kaggle_CIBMTR/test.csv'
-        subm_path = 'C:/Users/mattg/Downloads/KAGGLE_PROJECTS/Kaggle_CIBMTR/sample_submission.csv'
-        dict_path = 'C:/Users/mattg/Downloads/KAGGLE_PROJECTS/Kaggle_CIBMTR/data_dictionary.csv'
+        train_path = os.path.join(data_directory, 'train.csv')
+        test_path = os.path.join(data_directory, 'test.csv')
+        subm_path = os.path.join(data_directory, 'sample_submission.csv')
+        dict_path = os.path.join(data_directory, 'data_dictionary.csv')
     # general configs:
     color = '#117A65'
     batch_size = 32768 # large batch size for better CPU utilization w CoxResNet
