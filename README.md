@@ -30,26 +30,21 @@ cd CIBMTR-HCT-Survival-Predictions
 
 ### 2. Set Up the Python Environment
 
-#### Option A: With Conda (Recommended for GPU / PyTorch Compatibility)
+#### With Conda (Recommended for GPU / PyTorch Compatibility)
 
 ```bash
 conda create -n cibmtr_env python=3.8
 conda activate cibmtr_env
 
 conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c conda-forge jupyter notebook
 pip install -r requirements.txt
+python -m ipykernel install --user --name=cibmtr_env
 ```
 
 > This setup matches my environment (Python 3.8.10, CUDA 11.8, RTX 3070 Ti, PyTorch 2.4.1).  
 > If you're using a different system or Python version, check [PyTorch installation options](https://pytorch.org/get-started/locally/) to match your drivers and hardware.
 
-#### Option B: With `venv` (for CPU-only or custom setups)
-
-```bash
-python -m venv .venv
-.\.venv\Scripts\activate      # or: source .venv/bin/activate
-pip install -r requirements.txt
-```
 
 You may need to manually install a compatible `torch` version depending on your hardware.
 
@@ -57,8 +52,10 @@ You may need to manually install a compatible `torch` version depending on your 
 
 Run the main notebook:
 
-```python
-notebooks/cibmtr-equitable-post-hct-survival-predictions.ipynb
+```bash
+cd notebooks
+jupyter notebook cibmtr-equitable-post-hct-survival-predictions.ipynb
+# once opened, change the kernel to cibmtr_env 
 ```
 
 This handles:
